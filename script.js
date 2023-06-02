@@ -46,15 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const incidentLocation = document.getElementById('incident-location').value;
       const incidentDescription = document.getElementById('incident-description').value;
   
-      // Perform actions to submit the incident report
-      // You can retrieve the form data and send it to the server
-      // Example:
-      // const formData = {
-      //   type: incidentType,
-      //   location: incidentLocation,
-      //   description: incidentDescription
-      // };
-      // Perform AJAX request or any necessary action with the data
+ 
   
       // Reset the form after submitting the report
       incidentForm.reset();
