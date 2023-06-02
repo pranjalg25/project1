@@ -1,0 +1,116 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo-container img {
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  #content {
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  /* Home Section Styles */
+  #home-section {
+    text-align: center;
+  }
+  
+  /* Report Section Styles */
+  #report-section {
+    display: none;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Alerts Section Styles */
+  #alerts-section {
+    display: none;
+  }
+  
+  #alerts-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #alerts-list li {
+    margin-bottom: 20px;
+  }
+  
+  /* Engagement Section Styles */
+  #engagement-section {
+    display: none;
+  }
+  
+  /* Login Section Styles */
+  #login-section {
+    display: none;
+  }
+
+  #map{
+    width: 500px;
+    height: 300px;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+
+  
