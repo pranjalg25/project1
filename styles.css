@@ -1,116 +1,106 @@
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+document.addEventListener('DOMContentLoaded', function() {
+    const homeLink = document.getElementById('home-link');
+    const reportLink = document.getElementById('report-link');
+    const alertsLink = document.getElementById('alerts-link');
+    const engagementLink = document.getElementById('engagement-link');
+    const loginLink = document.getElementById('login-link');
   
+    const homeSection = document.getElementById('home-section');
+    const reportSection = document.getElementById('report-section');
+    const alertsSection = document.getElementById('alerts-section');
+    const engagementSection = document.getElementById('engagement-section');
+    const loginSection = document.getElementById('login-section');
   
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .logo-container img {
-    height: 50px;
-    margin-right: 10px;
-  }
+    const incidentForm = document.getElementById('incident-form');
+    const alertsList = document.getElementById('alerts-list');
   
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-  }
+    homeLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      showSection(homeSection);
+    });
   
-  nav ul li {
-    display: inline-block;
-    margin-right: 10px;
-  }
+    reportLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      showSection(reportSection);
+    });
   
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
+    alertsLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      showSection(alertsSection);
+      fetchAlerts();
+    });
   
-  #content {
-    padding: 20px;
-  }
+    engagementLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      showSection(engagementSection);
+    });
   
-  h2 {
-    color: #333;
-  }
+    loginLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      showSection(loginSection);
+    });
   
-  /* Home Section Styles */
-  #home-section {
-    text-align: center;
-  }
+    incidentForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const incidentType = document.getElementById('incident-type').value;
+      const incidentLocation = document.getElementById('incident-location').value;
+      const incidentDescription = document.getElementById('incident-description').value;
   
-  /* Report Section Styles */
-  #report-section {
-    display: none;
-  }
+      // Perform actions to submit the incident report
+      // You can retrieve the form data and send it to the server
+      // Example:
+      // const formData = {
+      //   type: incidentType,
+      //   location: incidentLocation,
+      //   description: incidentDescription
+      // };
+      // Perform AJAX request or any necessary action with the data
   
-  form {
-    margin-top: 20px;
-  }
+      // Reset the form after submitting the report
+      incidentForm.reset();
+    });
   
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
+    function fetchAlerts() {
+      // Simulated data
+      const alertsData = [
+        {
+          title: 'Crime Alert: Theft',
+          description: 'A theft incident has been reported near Main Street.'
+        },
+        {
+          title: 'Weather Alert: Heavy Rainfall',
+          description: 'Expect heavy rainfall in the area today. Stay indoors.'
+        }
+      ];
   
-  input[type="text"],
-  textarea {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-  }
+      // Clear existing alerts
+      alertsList.innerHTML = '';
   
-  button[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
+      // Iterate through alerts data and create HTML elements
+      alertsData.forEach(function(alert) {
+        const alertItem = document.createElement('li');
+        const alertTitle = document.createElement('h3');
+        const alertDescription = document.createElement('p');
   
-  /* Alerts Section Styles */
-  #alerts-section {
-    display: none;
-  }
+        alertTitle.textContent = alert.title;
+        alertDescription.textContent = alert.description;
   
-  #alerts-list {
-    list-style-type: none;
-    padding: 0;
-  }
+        alertItem.appendChild(alertTitle);
+        alertItem.appendChild(alertDescription);
   
-  #alerts-list li {
-    margin-bottom: 20px;
-  }
+        alertsList.appendChild(alertItem);
+      });
+    }
   
-  /* Engagement Section Styles */
-  #engagement-section {
-    display: none;
-  }
+    function showSection(section) {
+      // Hide all sections
+      const sections = [homeSection, reportSection, alertsSection, engagementSection, loginSection];
+      sections.forEach(function(sec) {
+        sec.style.display = 'none';
+      });
   
-  /* Login Section Styles */
-  #login-section {
-    display: none;
-  }
-
-  #map{
-    width: 500px;
-    height: 300px;
-  }
-  
-  /* Footer Styles */
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-  }
-
+      // Show the selected section
+      section.style.display = 'block';
+    }
+  });
   
